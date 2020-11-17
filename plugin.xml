@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-apk-installer"
+    version="0.0.1"
+>
+    <name>APK Installer</name>
+    <description>Cordova APK Installer Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,apk,installer,plugin</keywords>
+
+    <engines>
+	    <engine name="cordova" version=">=3.2.0" />
+    </engines>
+
+    <js-module src="www/apk-installer.js" name="apk-installer">
+        <clobbers target="window.ApkInstaller" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ApkInstallerPlugin">
+                <param name="android-package" value="de.amicaldo.cordova.plugin.ApkInstallerPlugin" />
+            </feature>
+        </config-file>
+
+
+        <config-file target="AndroidManifest.xml" parent="/manifest" after="uses-permission">
+            <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+        </config-file>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <preference name="AndroidPersistentFileLocation" value="Internal" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <provider
+                android:name="plugin.apkInstaller.ApkInstallerProvider"
+                android:authorities="${applicationId}.fileprovider"
+                android:exported="false"
+                android:grantUriPermissions="true"
+            >
+                <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths" />
+            </provider>
+        </config-file>
+
+        <source-file src="src/android/ApkInstaller.java" target-dir="src/plugin/apkInstaller/"/>
+        <source-file src="src/android/xml/file_paths.xml" target-dir="res/xml/"/>
+    </platform>
+</plugin>
