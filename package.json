@@ -1,34 +1,33 @@
 {
-  "name": "cordova-plugin-kiosk-mode",
+  "name": "cordova-plugin-apk-installer",
   "version": "0.0.2",
-  "description": "Cordova kiosk mode plugin",
-  "main": "./www/kiosk-mode.js",
+  "description": "Cordova APK installer plugin",
+  "main": "./www/apk-installer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "cordova": {
-    "id": "cordova-plugin-kiosk-mode",
+    "id": "cordova-plugin-apk-installer",
     "platforms": [
       "android"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amicaldo/cordova-plugin-kiosk-mode.git"
+    "url": "git+https://github.com/amicaldo/cordova-plugin-apk-installer.git"
   },
   "keywords": [
     "android",
     "cordova",
-    "kiosk",
-    "mode",
-    "launcher",
+    "apk",
+    "installer",
     "cordova-android",
     "ecosystem:cordova"
   ],
   "author": "Jannik Hauptvogel <hauptvogel@amicaldo.de>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/amicaldo/cordova-plugin-kiosk-mode/issues"
+    "url": "https://github.com/amicaldo/cordova-plugin-apk-installer/issues"
   },
-  "homepage": "https://github.com/amicaldo/cordova-plugin-kiosk-mode#readme"
+  "homepage": "https://github.com/amicaldo/cordova-plugin-apk-installer#readme"
 }
