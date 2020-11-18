@@ -5,6 +5,7 @@ import android.content.Context;
 import android.widget.*;
 import org.apache.cordova.*;
 import org.json.JSONArray;
+import org.json.JSONException;
 import android.support.v4.content.FileProvider;
 import android.net.Uri;
 import java.io.File;
@@ -21,16 +22,20 @@ public class ApkInstallerPlugin extends CordovaPlugin {
     ) {
         switch (action) {
             case "install":
-                String file = args.getString(0);
+                try {
+                    String file = args.getString(0);
 
-                if (this.install(file)) {
-                    callbackContext.success();
+                    if (this.install(file)) {
+                        callbackContext.success();
 
-                    return true;
-                } else {
-                    callbackContext.error("Could not install " + file);
+                        return true;
+                    } else {
+                        callbackContext.error("Could not install " + file);
 
-                    return false;
+                        return false;
+                    }
+                } catch (JSONException e) {
+                    callbackContext.error(e.getMessage());
                 }
         }
 
