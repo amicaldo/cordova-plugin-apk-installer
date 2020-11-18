@@ -29,7 +29,6 @@
             </feature>
         </config-file>
 
-
         <config-file target="AndroidManifest.xml" parent="/manifest" after="uses-permission">
             <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
         </config-file>
@@ -40,7 +39,7 @@
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <provider
-                android:name="de.amicaldo.cordova.plugin.ApkInstallerProvider"
+                android:name="android.support.v4.content.FileProvider"
                 android:authorities="${applicationId}.fileprovider"
                 android:exported="false"
                 android:grantUriPermissions="true"
