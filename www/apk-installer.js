@@ -8,7 +8,7 @@ class ApkInstaller {
    */
   static install(file) {
     return new Promise((resolve, reject) => {
-      exec(resolve, reject, 'apkInstaller', 'install', [file]);
+      exec(resolve, reject, 'ApkInstallerPlugin', 'install', [file]);
     });
   }
 }
