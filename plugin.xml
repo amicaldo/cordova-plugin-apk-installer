@@ -7,7 +7,7 @@
     version="0.0.1"
 >
     <name>APK Installer</name>
-    <description>Cordova APK Installer Plugin</description>
+    <description>Cordova APK installer Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,apk,installer,plugin</keywords>
 
@@ -46,7 +46,7 @@
             </provider>
         </config-file>
 
-        <source-file src="src/android/ApkInstaller.java" target-dir="src/plugin/apkInstaller/"/>
+        <source-file src="src/android/ApkInstallerPlugin.java" target-dir="src/plugin/apkInstaller/"/>
         <source-file src="src/android/xml/file_paths.xml" target-dir="res/xml/"/>
     </platform>
 </plugin>
