@@ -7,9 +7,12 @@ import org.apache.cordova.*;
 import org.json.JSONArray;
 import android.support.v4.content.FileProvider;
 import android.net.Uri;
+import java.io.File;
 
 
 public class ApkInstallerPlugin extends CordovaPlugin {
+    private static final String MYME_TYPE_APK = "application/vnd.android.package-archive";
+
     @Override
     public boolean execute(
         String action,
@@ -50,7 +53,7 @@ public class ApkInstallerPlugin extends CordovaPlugin {
             );
             Intent intent = new Intent(Intent.ACTION_VIEW);
 
-            intent.setDataAndType(uri, MYME_TYPE_APK);
+            intent.setDataAndType(uri, this.MYME_TYPE_APK);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.addFlags(
                 Intent.FLAG_GRANT_WRITE_URI_PERMISSION |

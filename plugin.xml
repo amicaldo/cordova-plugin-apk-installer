@@ -37,7 +37,7 @@
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <provider
-                android:name="plugin.apkInstaller.ApkInstallerProvider"
+                android:name="de.amicaldo.cordova.plugin.ApkInstallerProvider"
                 android:authorities="${applicationId}.fileprovider"
                 android:exported="false"
                 android:grantUriPermissions="true"
