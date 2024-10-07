@@ -2,12 +2,13 @@ package de.amicaldo.cordova.plugin;
 
 import android.content.Intent;
 import android.content.Context;
-import android.widget.*;
+
 import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
-import android.support.v4.content.FileProvider;
+import androidx.core.content.FileProvider;
 import android.net.Uri;
+
 import java.io.File;
 
 
