@@ -1,6 +1,6 @@
 {
-  "name": "cordova-plugin-apk-installer",
-  "version": "0.0.2",
+  "name": "@amicaldo/cordova-plugin-apk-installer",
+  "version": "1.0.0",
   "description": "Cordova APK installer plugin",
   "main": "./www/apk-installer.js",
   "scripts": {
