@@ -49,7 +49,7 @@ public class ApkInstallerPlugin extends CordovaPlugin {
         try {
             Context context = this.cordova.getActivity().getApplicationContext();
             String filepath = context.getFilesDir() + "/" + filename;
-            File file = new File(context.getFilesDir() + "/" + filename);
+            File file = new File(filepath);
 
             // Get file uri
             Uri uri = FileProvider.getUriForFile(
